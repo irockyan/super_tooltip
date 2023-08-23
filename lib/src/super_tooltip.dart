@@ -47,6 +47,7 @@ class SuperTooltip extends StatefulWidget {
   final ClipAreaShape touchThroughAreaShape;
   final double touchThroughAreaCornerRadius;
   final EdgeInsetsGeometry overlayDimensions;
+  final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry bubbleDimensions;
 
   //filter
@@ -74,6 +75,7 @@ class SuperTooltip extends StatefulWidget {
     this.shadowBlurRadius,
     this.shadowSpreadRadius,
     this.top,
+    this.padding,
     this.right,
     this.bottom,
     this.left,
@@ -354,6 +356,7 @@ class _SuperTooltipState extends State<SuperTooltip>
                               ]
                             : null,
                         shape: BubbleShape(
+                          padding: widget.padding,
                           arrowBaseWidth: widget.arrowBaseWidth,
                           arrowTipDistance: widget.arrowTipDistance,
                           borderColor: widget.borderColor,

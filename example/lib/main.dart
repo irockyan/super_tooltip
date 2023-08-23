@@ -77,6 +77,7 @@ class _TargetWidgetState extends State<TargetWidget> {
           arrowBaseWidth: 20.0,
           arrowLength: 20.0,
           borderWidth: 2.0,
+          padding: EdgeInsets.symmetric(vertical: 12, horizontal: 8),
           constraints: const BoxConstraints(
             minHeight: 0.0,
             maxHeight: 100,

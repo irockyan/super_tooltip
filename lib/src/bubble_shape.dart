@@ -5,20 +5,20 @@ import 'package:flutter/material.dart';
 import 'enums.dart';
 
 class BubbleShape extends ShapeBorder {
-  const BubbleShape({
-    required this.preferredDirection,
-    required this.target,
-    required this.borderRadius,
-    required this.arrowBaseWidth,
-    required this.arrowTipDistance,
-    required this.borderColor,
-    required this.borderWidth,
-    required this.left,
-    required this.top,
-    required this.right,
-    required this.bottom,
-    required this.bubbleDimensions,
-  });
+  const BubbleShape(
+      {required this.preferredDirection,
+      required this.target,
+      required this.borderRadius,
+      required this.arrowBaseWidth,
+      required this.arrowTipDistance,
+      required this.borderColor,
+      required this.borderWidth,
+      required this.left,
+      required this.top,
+      required this.right,
+      required this.bottom,
+      required this.bubbleDimensions,
+      this.padding});
 
   final Offset target;
   final double arrowBaseWidth;
@@ -29,9 +29,10 @@ class BubbleShape extends ShapeBorder {
   final double? left, top, right, bottom;
   final TooltipDirection preferredDirection;
   final EdgeInsetsGeometry bubbleDimensions;
+  final EdgeInsetsGeometry? padding;
 
   @override
-  EdgeInsetsGeometry get dimensions => const EdgeInsets.all(10.0);
+  EdgeInsetsGeometry get dimensions => padding ?? const EdgeInsets.all(10.0);
 
   @override
   Path getInnerPath(Rect rect, {TextDirection? textDirection}) => Path()
