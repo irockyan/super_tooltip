@@ -49,6 +49,7 @@ class SuperTooltip extends StatefulWidget {
   final EdgeInsetsGeometry overlayDimensions;
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry bubbleDimensions;
+  final bool isShow;
 
   //filter
   final bool showDropBoxFilter;
@@ -63,6 +64,7 @@ class SuperTooltip extends StatefulWidget {
     this.onLongPress,
     this.onShow,
     this.onHide,
+    this.isShow = false,
     this.showCloseButton,
     this.closeButtonColor,
     this.closeButtonSize,
@@ -153,6 +155,12 @@ class _SuperTooltipState extends State<SuperTooltip>
     );
     _superTooltipController = widget.controller ?? SuperTooltipController();
     _superTooltipController!.addListener(_onChangeNotifier);
+
+    if (widget.isShow) {
+      Future.delayed(Duration(milliseconds: 10), () {
+        _superTooltipController?.showTooltip();
+      });
+    }
 
     // TD: Mouse stuff
     super.initState();
