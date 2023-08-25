@@ -68,6 +68,7 @@ class _TargetWidgetState extends State<TargetWidget> {
         },
         child: SuperTooltip(
           showBarrier: true,
+          isShow: true,
           controller: _controller,
           popupDirection: TooltipDirection.down,
           backgroundColor: Color(0xff2f2d2f),

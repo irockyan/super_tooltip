@@ -157,7 +157,7 @@ class _SuperTooltipState extends State<SuperTooltip>
     _superTooltipController!.addListener(_onChangeNotifier);
 
     if (widget.isShow) {
-      Future.delayed(Duration(milliseconds: 10), () {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
         _superTooltipController?.showTooltip();
       });
     }
